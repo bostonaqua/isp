@@ -2,6 +2,7 @@
 conf=$(echo "/usr/local/ispmgr/etc/ispmgr.conf")
 bit=$(uname -m | sed s/_/-/g)
 php=$(php -v | awk 'NR==1{print substr($2,1,3)}')
+echo -e "\nIn progress..."
 sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/atrpms.repo
 if ! grep -q "Option DisableIspmgrEOLBannersDisplay" $conf
 then echo "Option DisableIspmgrEOLBannersDisplay" >> $conf; fi
