@@ -15,4 +15,6 @@ tar zxf "ioncube_loaders_lin_$bit.tar.gz" -C /usr/local/ioncube/ --strip 1
 echo "zend_extension = /usr/local/ioncube/ioncube_loader_lin_$php.so" > /etc/php.d/0_ioncube.ini
 echo "zend_extension_ts = /usr/local/ioncube/ioncube_loader_lin_"$php"_ts.so" >> /etc/php.d/0_ioncube.ini
 rm -f "ioncube_loaders_lin_$bit.tar.gz"
+rm -f $0
 /etc/init.d/httpd restart
+echo "ISPmanager 4 Lite tweaked. CentOS updated successfully. Also was installed php-gd-soap-bcmath-mcrypt-curl, Ioncube."
