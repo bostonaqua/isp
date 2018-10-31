@@ -10,7 +10,7 @@ wget http://ru.download.ispsystem.com/Linux-cc6/x86_64/ISPmanager-Lite/install.s
 tar zxvf install.stable.tgz -C /usr/local/ispmgr
 rm -f install.stable.tgz
 
-ip=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
+ip=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`
 
 curl http://lic.ispsystem.com/ispmgr.lic?ip=$ip > /usr/local/ispmgr/etc/ispmgr.lic
 
