@@ -1,4 +1,6 @@
 #!/bin/sh
+
+sed -i 's/SELinux=enforcing/SELinux=disabled/g' /etc/sysconfig/selinux
 yum update -y
 
 mkdir /usr/local/ispmgr
@@ -26,7 +28,6 @@ rpm -ivh /root/epel-release-6-8.noarch.rpm
 /usr/local/ispmgr/sbin/pkgctl install pop3
 /usr/local/ispmgr/sbin/pkgctl install smtp exim
 /usr/local/ispmgr/sbin/pkgctl install dns
-
 /usr/local/ispmgr/sbin/pkgctl activate cron
 /usr/local/ispmgr/sbin/pkgctl activate apache
 /usr/local/ispmgr/sbin/pkgctl activate nginx
@@ -53,3 +54,11 @@ yum install ntp unzip git vim nano screen vnstat htop php-gd php-mcrypt php-curl
 service ntpd restart
 service httpd restart
 
+curl -X GET http://webhookr.com/3HKRBK/loud/?data1=test
+curl -X GET http://webhookr.com/3HKRBK/error/?data1=test
+curl -X GET http://webhookr.com/3HKRBK/loud/?data1=test
+curl -X GET http://webhookr.com/3HKRBK/error/?data1=test
+curl -X GET http://webhookr.com/3HKRBK/loud/?data1=test
+curl -X GET http://webhookr.com/3HKRBK/error/?data1=test
+
+reboot
