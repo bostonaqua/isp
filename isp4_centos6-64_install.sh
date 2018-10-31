@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo 'Installing...
+echo 'Installing...'
 
 sed -i 's/SELinux=enforcing/SELinux=disabled/g' /etc/sysconfig/selinux
 yum update -y
