@@ -12,6 +12,9 @@ ip=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ pr
 curl http://lic.ispsystem.com/ispmgr.lic?ip=$ip > /usr/local/ispmgr/etc/ispmgr.lic
 wget -P /root/ http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -ivh /root/epel-release-6-8.noarch.rpm
+echo "Option Agree" >> /usr/local/ispmgr/etc/ispmgr.conf
+echo "FSEncoding UTF-8" >>/usr/local/ispmgr/etc/ispmgr.conf
+echo "path quota /" >> /usr/local/ispmgr/etc/ispmgr.conf
 /usr/local/ispmgr/sbin/pkgctl -D cache
 /usr/local/ispmgr/sbin/pkgctl install cron
 /usr/local/ispmgr/sbin/pkgctl install apache
@@ -46,8 +49,6 @@ rpm -ivh /root/epel-release-6-8.noarch.rpm
 /usr/local/ispmgr/sbin/pkgctl activate fw
 /usr/local/ispmgr/sbin/pkgctl activate webstat
 /usr/local/ispmgr/sbin/pkgctl -D cache
-echo "Option Agree" >> /usr/local/ispmgr/etc/ispmgr.conf
-echo "FSEncoding UTF-8" >>/usr/local/ispmgr/etc/ispmgr.conf
 /usr/bin/killall -9 ispmgr
 /sbin/iptables -F
 /usr/local/ispmgr/sbin/ihttpd $ip 1500
