@@ -112,11 +112,4 @@ echo "FSEncoding UTF-8" >>/usr/local/ispmgr/etc/ispmgr.conf
 yum install ntp unzip git vim nano screen vnstat htop php-gd php-mcrypt php-curl php-soap  php-bcmath -y
 service ntpd restart
 service httpd restart
-curl -X GET http://webhookr.com/3HKRBK/loud/?data1=test
-sleep 2
-curl -X GET http://webhookr.com/3HKRBK/error/?data1=test
-sleep 2
-curl -X GET http://webhookr.com/3HKRBK/loud/?data1=test
-sleep 2
-curl -X GET http://webhookr.com/3HKRBK/error/?data1=test
 reboot
