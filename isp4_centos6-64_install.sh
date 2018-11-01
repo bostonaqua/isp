@@ -25,6 +25,10 @@ rpm -ivh /root/epel-release-6-8.noarch.rpm
 /usr/local/ispmgr/sbin/pkgctl install pop3
 /usr/local/ispmgr/sbin/pkgctl install smtp exim
 /usr/local/ispmgr/sbin/pkgctl install dns
+/usr/local/ispmgr/sbin/pkgctl install webmail
+/usr/local/ispmgr/sbin/pkgctl install quota
+/usr/local/ispmgr/sbin/pkgctl install fw
+/usr/local/ispmgr/sbin/pkgctl install webstat
 /usr/local/ispmgr/sbin/pkgctl activate cron
 /usr/local/ispmgr/sbin/pkgctl activate apache
 /usr/local/ispmgr/sbin/pkgctl activate nginx
@@ -37,6 +41,10 @@ rpm -ivh /root/epel-release-6-8.noarch.rpm
 /usr/local/ispmgr/sbin/pkgctl activate lda
 /usr/local/ispmgr/sbin/pkgctl activate smtp exim
 /usr/local/ispmgr/sbin/pkgctl activate dns
+/usr/local/ispmgr/sbin/pkgctl activate webmail
+/usr/local/ispmgr/sbin/pkgctl activate quota
+/usr/local/ispmgr/sbin/pkgctl activate fw
+/usr/local/ispmgr/sbin/pkgctl activate webstat
 /usr/local/ispmgr/sbin/pkgctl -D cache
 echo "Option Agree" >> /usr/local/ispmgr/etc/ispmgr.conf
 echo "FSEncoding UTF-8" >>/usr/local/ispmgr/etc/ispmgr.conf
