@@ -31,7 +31,6 @@ echo "path quota /" >> /usr/local/ispmgr/etc/ispmgr.conf
 /usr/local/ispmgr/sbin/pkgctl install webmail
 /usr/local/ispmgr/sbin/pkgctl install quota
 /usr/local/ispmgr/sbin/pkgctl install fw
-/usr/local/ispmgr/sbin/pkgctl install webstat
 /usr/local/ispmgr/sbin/pkgctl activate cron
 /usr/local/ispmgr/sbin/pkgctl activate apache
 /usr/local/ispmgr/sbin/pkgctl activate nginx
@@ -47,12 +46,11 @@ echo "path quota /" >> /usr/local/ispmgr/etc/ispmgr.conf
 /usr/local/ispmgr/sbin/pkgctl activate webmail
 /usr/local/ispmgr/sbin/pkgctl activate quota
 /usr/local/ispmgr/sbin/pkgctl activate fw
-/usr/local/ispmgr/sbin/pkgctl activate webstat
 /usr/local/ispmgr/sbin/pkgctl -D cache
 /usr/bin/killall -9 ispmgr
 /sbin/iptables -F
 /usr/local/ispmgr/sbin/ihttpd $ip 1500
 yum install ntp unzip git vim nano screen vnstat htop php-gd php-mcrypt php-curl php-soap  php-bcmath -y
-service ntpd restart
+service ntpd start
 service httpd restart
 reboot
